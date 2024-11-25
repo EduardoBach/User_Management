@@ -1,0 +1,11 @@
+<h1>Registered Users</h1>
+<div class="users-container">
+    {{#each register}}
+        <a href="/register/{{this.id}}" class="user-row">
+            <span><strong>Name:</strong> {{this.name}}</span>
+            <span><strong>Email:</strong> {{this.email}}</span>
+            <span><strong>Phone:</strong> {{this.phone}}</span>
+            <span><strong>Address:</strong> {{this.address}}</span>
+        </a>
+    {{/each}}
+</div>

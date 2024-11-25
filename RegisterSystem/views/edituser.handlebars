@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Edit The User</h1>
+    <form action="/register/updateuser" method="POST">
+        <input type="hidden" name="id" value="{{useredit.id}}">
+        <div class="form-control">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Name" value="{{useredit.name}}">
+        </div>
+        <div class="form-control">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Email" value="{{useredit.email}}">
+        </div>
+        <div class="form-control">
+            <label for="phone">Phone:</label>
+            <input type="number" name="phone" id="phone" placeholder="Phone" value="{{useredit.phone}}">
+        </div>
+        <div class="form-control">
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" placeholder="Address" value="{{useredit.address}}">
+        </div>
+        <input type="submit" value="Edit" class="btn">
+    </form>
+</div>

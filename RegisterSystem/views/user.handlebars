@@ -1,0 +1,16 @@
+<div class="container user-profile">
+    <header class="user-header">
+        <h1>{{user.name}}</h1>
+    </header>
+    <section class="user-details">
+        <p><span class="bold">Email:</span> {{user.email}}</p>
+        <p><span class="bold">Telefone:</span> {{user.phone}}</p>
+        <p><span class="bold">Endereço:</span> {{user.address}}</p>
+    </section>
+    <div class="edit-button-container">
+        <a href="/register/edit/{{user.id}}" class="btn btn-edit">Edit</a>
+    </div>
+    <form action="/register/remove/{{user.id}}" method="POST">
+        <input type="submit" value="Remove" class="btn-remove">
+    </form>
+</div>
