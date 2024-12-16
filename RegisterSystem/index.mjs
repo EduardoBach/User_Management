@@ -1,6 +1,7 @@
 import express from "express";
 import { engine } from "express-handlebars";
 import mysql from "mysql"
+import dotenv from 'dotenv';
 
 const app = express()
 
@@ -136,18 +137,21 @@ app.post('/register/remove/:id', (req,res)=> {
     })
 })
 
-// Configurar a conexão com o MySQL
+// Carregar as variáveis do arquivo .env
+dotenv.config();
+
+// Criar a conexão com o MySQL
 const conn = mysql.createConnection({
-    host: '172.19.135.75', // Tente '127.0.0.1' ou o IP do Windows encontrado
-    user: 'root',
-    password: 'Eduardo',
-    database: 'systemSQL',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
 });
 
 // Conectar ao MySQL
 conn.connect(function (err) {
     if (err) {
-        console.log(err);
+        console.error("Erro ao conectar ao MySQL:", err);
     } else {
         console.log("Conectado ao MySQL!");
 
